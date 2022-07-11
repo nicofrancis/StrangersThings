@@ -1,5 +1,10 @@
-export { default as login } from "./login";
-export { default as logout } from "./logout";
-export { default as posts } from "./posts";
-export { default as searchbar } from "./searchbar";
-// export { default as NavBar } from "./NavBar";
+export { default as Login } from "./Login";
+export { default as Logout } from "./Logout";
+export { default as NavBar } from "./NavBar";
+export { default as Post } from "./Post";
+export { default as Posts } from "./Posts";
+export { default as Profile } from "./Profile";
+export { default as Register } from "./Register";
+export { default as DeletePost } from "./DeletePost";
+export { default as NewMsg } from "./NewMsg";
+export { default as NewPost } from "./NewPost";

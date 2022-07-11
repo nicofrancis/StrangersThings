@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { fetchAllPosts, login, logout, NewPost, searchbar } from "./Components";
+import { fetchPosts, login, logout, NewPost, searchbar } from "./components";
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
