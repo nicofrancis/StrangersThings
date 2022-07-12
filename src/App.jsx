@@ -11,12 +11,20 @@ import {
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { fetchMe } from "./api/poster";
+import { fetchMe, fetchPosts } from "./api/poster";
 import useAuth from "./hooks/useAuth";
 
 export default function App() {
   const [posts, setPosts] = useState([]);
   const { token, setToken, currentUser, setCurrentUser } = useAuth();
+
+  useEffect(() => {
+    const GetPosts = async () => {
+      const result = await fetchPosts();
+      setPosts(result.data.posts);
+    };
+    GetPosts();
+  }, []);
 
   return (
     <div>
@@ -32,7 +40,9 @@ export default function App() {
         />
         <Route
           path="/Posts"
-          element={<Posts token={token} currentUser={currentUser} />}
+          element={
+            <Posts token={token} currentUser={currentUser} posts={posts} />
+          }
         />
         <Route
           path="/Profile"
