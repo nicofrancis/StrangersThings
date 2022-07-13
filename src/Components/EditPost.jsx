@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { editPost } from "../api/poster";
 
-export default function EditPost({ token, postList, setPostList, post }) {
+export default function EditPost({ token, post, posts, setPosts }) {
   const [title, setTitle] = useState(post.title);
   const [price, setPrice] = useState(post.price);
   const [location, setLocation] = useState(post.location);
@@ -21,6 +21,13 @@ export default function EditPost({ token, postList, setPostList, post }) {
             location,
             description,
           });
+          console.log(result);
+          const newPostList = posts.map((item) => {
+            if (item._id === post._id) {
+              return result.data.post;
+            } else return item;
+          });
+          setPosts(newPostList);
           return result;
         }}
       >

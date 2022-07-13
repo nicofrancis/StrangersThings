@@ -18,7 +18,7 @@ export default function NewPost({}) {
             <form
               onSubmit={async (event) => {
                 event.preventDefault();
-                const result = await makePost({
+                const result = await makePost(token, {
                   title,
                   price,
                   location,

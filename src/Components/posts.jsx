@@ -5,9 +5,9 @@ import { fetchPosts } from "../api/poster";
 import useAuth from "../hooks/useAuth";
 import Post from "./Post";
 
-export default function Posts({ posts }) {
+export default function Posts({ token, posts, currentUser, setPosts }) {
   // const [posts, setPosts] = useState([]);
-  const { token, setToken, currentUser, setCurrentUser } = useAuth();
+  // const { token, setToken, currentUser, setCurrentUser } = useAuth();
 
   // const renderPost = posts.map((post, index) => {
   //   return (
@@ -26,7 +26,13 @@ export default function Posts({ posts }) {
           return (
             <div key={`Key: ${index}`}>
               <div>
-                <Post post={post} />
+                <Post
+                  post={post}
+                  token={token}
+                  currentUser={currentUser}
+                  posts={posts}
+                  setPosts={setPosts}
+                />
               </div>
             </div>
           );

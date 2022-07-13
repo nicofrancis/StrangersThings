@@ -3,7 +3,7 @@ import EditPost from "./EditPost";
 import DeletePost from "./DeletePost";
 import { useNavigate } from "react-router-dom";
 
-export default function Post({ token, post, currentUser }) {
+export default function Post({ token, post, currentUser, posts, setPosts }) {
   console.log();
   const navigate = useNavigate();
   return (
@@ -19,10 +19,22 @@ export default function Post({ token, post, currentUser }) {
         <p>Description: {post.description}</p>
       </div>
       <div>
-        {/* {check if current user id is = to post author id, then render edit and
-        delete.} */}
-        <EditPost post={post} token={token} />
-        <DeletePost post={post} token={token} />
+        {currentUser._id === post.author._id ? (
+          <div>
+            <EditPost
+              post={post}
+              token={token}
+              posts={posts}
+              setPosts={setPosts}
+            />
+            <DeletePost
+              post={post}
+              token={token}
+              posts={posts}
+              setPosts={setPosts}
+            />
+          </div>
+        ) : null}
       </div>
     </div>
   );

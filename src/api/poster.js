@@ -58,6 +58,7 @@ export const fetchMe = async (token) => {
 };
 
 export const deletePost = async (token, postId) => {
+  console.log("look here", token, postId);
   const response = await fetch(`${url}/posts/${postId}`, {
     method: "DELETE",
     headers: {

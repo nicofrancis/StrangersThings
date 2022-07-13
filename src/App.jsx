@@ -41,7 +41,12 @@ export default function App() {
         <Route
           path="/Posts"
           element={
-            <Posts token={token} currentUser={currentUser} posts={posts} />
+            <Posts
+              token={token}
+              currentUser={currentUser}
+              posts={posts}
+              setPosts={setPosts}
+            />
           }
         />
         <Route
