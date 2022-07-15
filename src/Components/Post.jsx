@@ -9,6 +9,7 @@ export default function Post({ token, post, currentUser, posts, setPosts }) {
   return (
     <div>
       <div
+        className="postbox"
         onClick={() => {
           navigate(`posts/${post.id}`);
         }}

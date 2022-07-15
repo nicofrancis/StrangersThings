@@ -7,7 +7,7 @@ export default function Login({ setToken }) {
   const [errorMessage, setErrorMessage] = useState("");
 
   return (
-    <div>
+    <div className="login">
       <h4>Login:</h4>
       {errorMessage ? <h4>{errorMessage}</h4> : null}
       <form

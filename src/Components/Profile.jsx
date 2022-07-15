@@ -10,19 +10,23 @@ const Profile = () => {
   const { token, setToken, currentUser, setCurrentUser } = useAuth();
 
   return (
-    <div>
-      <h3>Profile</h3>
-      {currentUser?.username ? (
-        <h3>Signed in as: {currentUser.username}</h3>
-      ) : null}
-      <h4>My posts:</h4>
-      <div key={`Key: ${currentUser.id}`}>
-        <h2>Messages: {currentUser.messages}</h2>
+    <>
+      <div className="profile">
+        <span className="spanny">
+          <h3>Profile</h3>
+          {currentUser?.username ? (
+            <h3>Signed in as: {currentUser.username}</h3>
+          ) : null}
+          <h4>My posts:</h4>
+          <div key={`Key: ${currentUser.id}`}>
+            <h2>Messages: {currentUser.messages}</h2>
+          </div>
+          <div>
+            <NewPost token={token} currentUser={currentUser} />
+          </div>
+        </span>
       </div>
-      <div>
-        <NewPost token={token} currentUser={currentUser} />
-      </div>
-    </div>
+    </>
   );
 };
 

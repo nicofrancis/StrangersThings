@@ -4,6 +4,7 @@ import { fetchPosts } from "../api/poster";
 // import NewMsg from "./NewMsg";
 import useAuth from "../hooks/useAuth";
 import Post from "./Post";
+// import "";
 
 export default function Posts({ token, posts, currentUser, setPosts }) {
   // const [posts, setPosts] = useState([]);
@@ -21,7 +22,8 @@ export default function Posts({ token, posts, currentUser, setPosts }) {
   console.log(posts);
   if (posts.length > 0) {
     return (
-      <div>
+      <div className="app">
+        <h1>Community Posts</h1>
         {posts.map((post, index) => {
           return (
             <div key={`Key: ${index}`}>
