@@ -3,7 +3,7 @@ import { deletePost } from "../api/poster";
 
 export default function DeletePost({ token, post, setPosts, posts }) {
   return (
-    <div>
+    <div className="deletepost">
       <button
         onClick={async (event) => {
           event.preventDefault();

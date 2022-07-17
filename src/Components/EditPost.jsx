@@ -10,8 +10,9 @@ export default function EditPost({ token, post, posts, setPosts }) {
   const id = post._id;
 
   return (
-    <div>
+    <div className="editpost">
       <form
+        className="editform"
         onSubmit={async (event) => {
           event.preventDefault();
           const result = await editPost(token, {
@@ -55,7 +56,7 @@ export default function EditPost({ token, post, posts, setPosts }) {
           type="text"
           onChange={(event) => setDescription(event.target.value)}
         />
-        <button type="submit">Submit</button>
+        <button type="submit">Edit Post</button>
       </form>
     </div>
   );
